@@ -1,0 +1,337 @@
+/* ここから下に記載していく */
+
+@charset"utf-8";
+
+ /*白色に修正, font size指定なし */
+
+.logo img{
+ position: center;  
+ float: left;}
+
+.head1{
+  margin-left: 600px;
+  margin-top: 50px;}
+.head2{
+  margin-left: 50px;
+  margin-top: 50px;}
+.head3{
+  margin-left: 50px;
+  margin-top: 50px;}
+.head4{
+  margin-left: 50px;
+  margin-top: 50px;}
+.head5{
+  margin-left: 50px;
+  margin-top: 50px;}
+
+ .sekai img{
+ position: relative;
+ text-align: center; 
+ width: 100%;
+}
+
+ .sekai p {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24pt;
+    text-align: center;} 
+    
+.sekai p::first-line{
+  font-weight: bold;
+}
+.sekai br{
+  display: block;
+  content: "";
+  margin: 60px 0;
+}  
+
+h2 {
+  font-size: 24pt;
+  text-align: center;
+}
+
+.about {
+ color: #ffd61a;
+ margin-top: 60px;
+ margin-bottom: 30px;}
+
+.cheeseacademy {
+ margin-bottom: 60px;
+ text-align: center;
+}
+
+ul{
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.cheese p{
+ color: #222222;
+ text-align: center;
+ line-height: 1.5;
+ margin: 40px;
+}
+
+.mitaiken{
+ text-align: center;
+ margin-top: 30px;
+ line-height: 1.5;
+ margin-bottom: 60px;
+}
+
+div.honkaku{
+  display: flex;
+  background-color: #fafafa;
+justify-content: center;}
+
+figure.farm{
+  width: 600px;}
+.side_text {
+  text-align: left;
+  margin-top: 120px;
+  margin-left: 150px;
+  line-height: 2;}
+.side_text::first-line{
+  font-weight: bold;}
+p.honkaku{
+  text-align: center;
+ }
+
+div.chishiki{
+  display: flex;
+  background-color: #fafafa;
+  justify-content: center;}
+
+figure.teacher{
+  float: left;}
+.side_text2{
+  margin-top: 120px;
+  margin-left: 30px;
+  margin-right: -100px;
+  line-height: 2;
+width: 600px;}
+.side_text2::first-line{
+  font-weight: bold;}
+
+
+div.graduation{
+  display: flex;
+  background-color: #fafafa;
+  justify-content: center;}
+figure.hand{
+    width: 600px;}
+  .side_text3 {
+    text-align: left;
+    margin-top: 120px;
+    margin-left: 150px;
+    line-height: 2;}
+  .side_text3::first-line{
+    font-weight: bold;}
+
+.news{
+  color: #ffd61a;
+  margin-top: 60px;
+  margin-bottom: 30px;}
+
+.newsjp{
+  margin-bottom: 60px;
+  text-align: center}
+
+.wrap{
+  display: flex;
+  justify-content: space-around;}
+  
+p.image1, p.caption1{
+  text-align: center;
+}
+
+p.head1{
+  font-size: 16px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+
+p.caption1{
+  font-size: 14px;
+  text-align: left;
+  margin-left: 15px;
+  line-height: 2;}
+
+div.imagebox1{
+  width: 315px;
+  float:left;
+  }
+
+div.imagebox1:hover{
+  opacity: 0.5;
+}
+
+p.image2, p.caption2{
+  text-align: center;}
+
+p.head2{
+  font-size: 16px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 24px;}
+
+p.caption2{
+  font-size: 14px;
+  text-align: left;
+  margin-left: 15px;
+  line-height: 2;}
+
+div.imagebox2{
+  width: 315px;
+  float:left}
+
+div.imagebox2:hover{
+  opacity: 0.5}
+
+p.image3, p.caption3{
+  text-align: center;}
+
+p.head3{
+  font-size: 16px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 24px;}
+
+p.caption3{
+  font-size: 14px;
+  text-align: left;
+  margin-left: 15px;
+  line-height: 2;}
+
+div.imagebox3{
+  width: 315px;
+  float:left;}
+
+div.imagebox3:hover{
+  opacity: 0.5}
+
+.parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd61a;
+  width: 300px;
+  height: 60px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;}
+
+.parent:hover{
+  opacity: 0.5;}
+  
+.more{
+  display: block;
+  color: white;
+  font-size: 18px;}
+
+.parent2{
+  margin-top: 60px;
+  background-color: #fafafa;}
+
+.access{
+  margin-top: 60px;}
+
+.kaisha{
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 60px;}
+
+iframe.map{
+ margin-top: 60px;
+}
+
+p.description{
+  text-align: center;
+  margin-top: 60px;
+  line-height: 40px;
+  margin-bottom: 60px;}
+
+.contact{
+ margin-top: 60px;}
+
+.kai{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;}
+
+.description2{
+  text-align: center;
+  line-height: 1.5;}
+
+.note{
+  margin-top: 30px;
+  margin-bottom: 70px;
+  text-align: center;
+  line-height: 1.5;}
+
+.item{
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding-left: 300px;}
+
+.label{
+  float: left;
+text-align: center;
+margin-left: 200px;
+  }
+
+input[type="text"],input[type="email"]{
+    border: solid 1px #aaa;
+    margin-left: 200px;
+    font-size: 24px;}
+
+.inputs{
+  float: left;
+  margin-left: 200px;}
+
+.textarea{
+  margin-left: 200px;
+}
+
+.parent3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd61a;
+  width: 300px;
+  height: 60px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;}
+
+.parent3:hover{
+  opacity: 0.5;}
+  
+.send{
+  display: block;
+  color: white;
+  font-size: 18px;}
+
+.parent4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #707070;
+   height: 90px;
+margin-top: 140px;
+}
+
+.copyrights{
+  display: block;
+  color: white;
+  font-size: 16px;
+}
