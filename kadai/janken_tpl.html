@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+
+  <div class="main-visual">
+    <h1 class="site-title">
+    じゃんけん
+    </h1>
+
+  <!-- 背景Route66画像挿入 -->
+    <div class="mainbg">
+      <img src="img/route66.jpg" alt="background">
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="bet1">
+    <div class="bet1-wrap">
+      <ul class="bet1-list bet1-list--left">
+        <li class="bet1-item"><img src="img/2-top-cocacola.png" alt="コーラ"></li>
+        <li class="bet1-item"><img src="img/2-top-sprite.png" alt="スプライト"></li>
+        <li class="bet1-item"><img src="img/2-top-drpepper.png" alt="Dr.Pepper"></li>
+        <li class="bet1-item"><img src="img/2-top-i-lohas.png" alt="水"></li>
+        <li class="bet1-item"><img src="img/2-top-qoo.png" alt="オレンジ"></li>
+        <li class="bet1-item"><img src="img/2-top-ayataka.png" alt="綾鷹"></li>
+        <li class="bet1-item"><img src="img/2-top-yakan.png" alt="麦茶"></li>
+        <li class="bet1-item"><img src="img/2-top-aquarius.png" alt="アクエリアス"></li>
+        <li class="bet1-item"><img src="img/2-top-georgia.png" alt="コーヒー"></li>
+        <li class="bet1-item"><img src="img/2-top-kochakaden.png" alt="紅茶"></li>
+        <li class="bet1-item"><img src="img/2-top-lemondo.png" alt="レモン"></li>
+        <li class="bet1-item"><img src="img/2-top-nomels.png" alt="Nomels"></li>
+      </ul>
+      <ul class="bet1-list bet1-list--left">
+        <li class="bet1-item"><img src="img/2-top-cocacola.png" alt="コーラ"></li>
+        <li class="bet1-item"><img src="img/2-top-sprite.png" alt="スプライト"></li>
+        <li class="bet1-item"><img src="img/2-top-drpepper.png" alt="Dr.Pepper"></li>
+        <li class="bet1-item"><img src="img/2-top-i-lohas.png" alt="水"></li>
+        <li class="bet1-item"><img src="img/2-top-qoo.png" alt="オレンジ"></li>
+        <li class="bet1-item"><img src="img/2-top-ayataka.png" alt="綾鷹"></li>
+        <li class="bet1-item"><img src="img/2-top-yakan.png" alt="麦茶"></li>
+        <li class="bet1-item"><img src="img/2-top-aquarius.png" alt="アクエリアス"></li>
+        <li class="bet1-item"><img src="img/2-top-georgia.png" alt="コーヒー"></li>
+        <li class="bet1-item"><img src="img/2-top-kochakaden.png" alt="紅茶"></li>
+        <li class="bet1-item"><img src="img/2-top-lemondo.png" alt="レモン"></li>
+        <li class="bet1-item"><img src="img/2-top-nomels.png" alt="Nomels"></li>
+      </ul>
+    </div>
+  
+   </div>
+  
+<!-- ショッピングカートコード -->
+<div class="shop-cart">
+
+  <div class="column-labels">
+   <label class="product-image">Image</label>
+   <label class="product-price">価格</label>
+   <label class="product-quantity">数量</label>
+   <label class="product-removal">削除</label>
+   <label class="product-line-price">合計</label>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+     <img src="img/2-top-aquarius.png" alt="アクエリアス">
+     <img src="img/2-top-cocacola.png" alt="">
+     <img src="img/2-top-ayataka.png" alt="">
+    </div>
+    
+    <div class="product-price">150</div>
+
+    <div class="product-quantity">
+      <input type="number" value="2" min="1">
+    </div>
+
+    <div class="product-removal">
+      <button class="remove-product">クリア</button>
+    </div>
+
+    <div class="product-line-price">300</div>
+
+  <div class="product">
+    <div class="product-image">
+     <img src="img/2-top-lemondo.png" alt="レモン">
+     <img src="img/2-top-nomels.png" alt="Nomels">
+    
+    </div>
+      
+    <div class="product-price">250</div>
+  
+    <div class="product-quantity">
+      <input type="number" value="1" min="1">
+    </div>
+  
+    <div class="product-removal">
+      <button class="remove-product">クリア</button>
+    </div>
+  
+    <div class="product-line-price">250</div>
+
+  <!-- じゃんけんConsolelogコード -->
+    <ul>
+    <li id="gu_btn"><img src="img/Thumbnail-CL-SCL-GJ-001.png" alt="グー"></li>
+    <li id="cho_btn"><img src="img/Thumbnail-CL-SCL-GJ-002.png" alt="チョキ"></li>
+    <li id="par_btn"><img src="img/Thumbnail-CL-SCL-GJ-003.png" alt="パー"></li>
+    </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgement">結果</div>
+
+
+  
+ </main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+
+let num= Math.ceil( Math.random()*3 );
+console.log(num);
+
+$("#gu_btn").on("click", function(){
+if (num == 1){
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','チョキ') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの勝ち') );});
+}
+else if (num == 2) {
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','グー') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','引き分け') );});
+}
+else if (num ==3){
+  $(function() { var txt = $("#pc_hands").html();
+  $("#pc_hands").html( txt.replace("なに？", "パー") );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの負け') );});
+}
+});
+
+$("#cho_btn").on("click", function(){
+if (num == 1){
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','パー') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの勝ち') );});
+}
+else if (num == 2) {
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','チョキ') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','引き分け') );});
+}
+else if (num ==3){
+  $(function() { var txt = $("#pc_hands").html();
+  $("#pc_hands").html( txt.replace("なに？", "グー") );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの負け') );});
+}
+});
+
+$("#par_btn").on("click", function(){
+if (num == 1){
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','グー') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの勝ち') );});
+}
+else if (num == 2) {
+  $(function() { var txt = $('#pc_hands').html();
+  $('#pc_hands').html( txt.replace('なに？','パー') );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','引き分け') );});
+}
+else if (num ==3){
+  $(function() { var txt = $("#pc_hands").html();
+  $("#pc_hands").html( txt.replace("なに？", "チョキ") );});
+  $(function() { var txt2 = $('#judgement').html();
+  $('#judgement').html( txt2.replace('結果','あなたの負け') );});
+}
+});
+
+</script>
+</body>
+</html>

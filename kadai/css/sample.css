@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:50px;
+}
+ul{
+    padding: 0;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+
+
+.main-visual{
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.mainbg img{
+    width: 100%;
+    height: 500px;
+}
+
+.main-visual h1{
+    position: absolute;/*絶対配置*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    color: white;/*文字は白に*/
+}
+
+@keyframes infinity-scroll-left{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.bet1-wrap{
+    display: flex;
+    overflow: hidden;
+}
+
+.bet1-list{
+    display: flex;
+    list-style: none;
+}
+
+.bet1-list--left{
+    animation: infinity-scroll-left 95s infinite linear 0.5s both;
+}
+
+.bet1-item{
+    width: calc(100vw / 12);
+}
+
+.bet1-item > img{
+    height: 100%;
+ }
+
+.bet1-wrap:hover .bet1-list--left{
+     animation-play-state: paused;
+}
+
+li.bet1-item:hover{
+    opacity: 0.8;
+    transform: scale(1.2,1.2);
+}
+
+.product-image { float: left; width: 20%; }
+.product-price { float: left; width: 10%; }
+.product-quantity { float: left; width: 15%; }
+.product-removal { float: left; width: 10%; }
+.product-line-price { float: left; width: 10%;}
+
+.product-image img{
+    width: 10%;}
+
+.product-price, .product-quantity, .product-removal, .product-line-price{
+    font-size: 24px;
+    vertical-align: text-bottom;
+}
+
+.product{
+    display: block;
+    float: left;
+}
+
+.product .product-price:before, .product .product-line-price::before{
+    content: "￥";
+}
+
+.column-labels {
+    padding-bottom: 45px;}
+
+.product-image{
+    color: white;
+}
+
+.totals{
+    display: flex;
+}
