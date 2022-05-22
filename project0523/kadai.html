@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/style.css">
+<title>課題アプリ</title>
+</head>
+<body>
+
+<!-- コンテンツ表示画面 -->
+
+<div id="output">
+    <h1>FREE CHAT on ROUTE66</h1>
+</div>
+
+<div>
+    SELECT ICON
+<ul class="iconimg">
+<li class="imgs" data-img="white"><img src="imgs/white.png" width="100px"></li>
+<li class="imgs" data-img="red"><img src="imgs/red.png" width="100px"></li>
+<li class="imgs" data-img="black"><img src="imgs/black.png" width="100px"></li>
+</ul>
+</div>
+
+INPUT NAME　<input type="text" id="uname">
+
+<div class="msgarea">
+    <div class="msgarea_text">
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    </div>
+    <div class="msgarea_send">
+        <button id="sendarea">送信</button>
+    </div>
+</div>
+<!--/ コンテンツ表示画面 -->
+
+
+
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- JQuery -->
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved }
+        from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.8.1/firebase-database.min.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "",
+      authDomain: "fir-kadai-4546c.firebaseapp.com",
+      projectId: "fir-kadai-4546c",
+      storageBucket: "fir-kadai-4546c.appspot.com",
+      messagingSenderId: "621014939746",
+      appId: "1:621014939746:web:1a83a547409df0de02793b"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    const db = getDatabase(app);
+    // appの中のdb機能を使用するというテンプレ
+    const dbRef = ref(db, "chat");
+    
+let d=0;
+const img= ["whte.png","red.png","black.png"];
+$(".imgs").on("click",function(){
+    d=$(this).attr("data-img");
+});
+
+    $("#sendarea").on("click",function (){
+        const msg = {
+            uname: $("#uname").val(),
+            text: $("#textarea").val(),
+            icon: d
+        }
+
+        const newPostRef = push (dbRef)
+        set(newPostRef,msg);
+    });
+
+    onChildAdded(dbRef, function(data){
+        // 子要素が押された発動してください＝イベントを発生してくださいがonAdded
+        const msg = data.val();
+        const key = data.key;
+        // const h = `<p><img src="imgs/+img[msg.icon]+"width="30">: ${msg.uname}: ${msg.text} <button class="edit">edit</button><button class="delete">delete</button></p>`
+        // const h = `<p id="${key}" class="delete"> ${msg.uname}: ${msg.text} <button class="edit">edit</button><button class="delete">delete</button></p>`
+        const h = `<p id="${key}" class="delete"> ${msg.uname}: ${msg.text} <img src="imgs/+img[msg.icon]+"width="30"><button class="delete">delete</button></p>`
+        // htmlの略としてhを置いたことを指す。
+        $("#output").append(h);
+    });
+
+    $("#output").on("click", '.delete', function(){
+        const thisKey = $(this).attr("id");
+        const dltKey = "chat/"+thisKey;
+        remove(ref(db, dltKey));
+    });
+
+    onChildRemoved(dbRef, function(data){
+        const key = '#'+data.key;
+        $(key).remove();
+    });
+
+    $("#text").on("keydown" , function(e){
+        console.log(e.key, e.keyCode);
+        if(e.keyCode === 13){
+            const msg = {
+            uname: $("#uname").val(),
+            text: $("#text").val()
+        }
+        const newPostRef = push (dbRef)
+        set(newPostRef,msg);
+        }
+    });
+
+       // console.log(e.keyCode);
+        // eventの略がe, keyCodeはアルファベットに対してのコードを付与するもの
+ 
+
+
+    // 削除ボタンに対する動作実装(ここから作業)
+
+    // $("#").mouseover(function(){
+    //     console.log("マウスオーバー");
+    // })
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
