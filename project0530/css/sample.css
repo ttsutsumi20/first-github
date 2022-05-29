@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background-image: url(https://wallpaperaccess.com/full/3346779.jpg);
+}
+
+header {
+
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 40px;
+  font-family: Monotype Corsiva;
+}
+
+.searchbox{
+  /* background-color: blue; */
+}
+
+h2{
+  font-size:16px;
+}
+
+.content {
+  font-size: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0;
+  border-top: 2px solid #ffffff;
+  display: table;
+  /* 定義 */
+  table-layout: fixed;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(146, 146, 146, 0.6);
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  border: 1px solid #666;
+  display: table-cell;
+  /* 定義 */
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+li:hover {
+  background: #0066CC;
+  color: #fff;
+}
+textarea{
+  margin: 3%;
+  width: 30%;
+  height: 30px;
+  font-size:50%;
+  box-shadow: 3px 3px 3px 3px #555;
+}
+
+.tit{
+  font-size: 24px;
+  width: 800px;
+  vertical-align: middle
+}
+
+
+.format{
+  color: white;
+  font-weight: bold;
+}
