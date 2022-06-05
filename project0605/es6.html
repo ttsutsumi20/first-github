@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+function add(a,b) {
+    return a+b;
+}
+
+console.log(add(3,4));
+
+const add2 =(a,b) =>{
+    return a+b;
+}
+
+console.log(add2(3,4));
+
+const results = ["大吉","吉","凶"];
+
+for (let i=0; i<results.length; i++){
+    console.log(results[i])
+}
+
+//↓ 一番左から順に値を取るとの指事　= for文と一緒の内容を指してる
+results.forEach (function (r) {
+    console.log(r);
+})
+
+results.forEach ( (r) => {
+    console.log(r);
+})
+
+
+</script>
+</body>
+</html>

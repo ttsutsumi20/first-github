@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<title>infobox show[one/Multiple]</title>
+<style></style>
+</head>
+<body>
+    
+    
+<!-- MAP[START] -->
+<div class="top">~世界のビールマップ~</div>
+<div id="myMap" style='width:1200px;height:700px;padding-left:200px; margin-left:150px'></div>
+
+
+<!-- <div class="popup">
+    <div class="content">
+        <p>サンプルテキスト、サンプルテキスト、サンプルテキスト、サンプルテキスト</p>
+        <button id="close">閉じる</button>
+    </div>
+</div> -->
+
+<!-- MAP[END] -->
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- JQuery -->
+
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqcYStoaqmEG3o8Q-kwMYRUB-n6yZkAX3oinBZWnvXUZrBut8IkGQ5wOuJPywZUm' async defer></script>
+<script src="./js/BmapQuery.js"></script>
+<script>
+
+
+//****************************************************************************************
+// BingMaps&BmapQuery
+//****************************************************************************************
+//Init
+function GetMap(){
+
+    //------------------------------------------------------------------------
+    //1. Instance
+    //------------------------------------------------------------------------
+    const map = new Bmap("#myMap");
+
+    //------------------------------------------------------------------------
+    //2. Display Map
+    //------------------------------------------------------------------------
+    map.startMap(35.039500, 135.728500, "load", 2);
+
+    //----------------------------------------------------
+    //3. Infobox
+    //   options = new Array();
+    //   options[index] = { lat, lon, width, height, title, pinColor, description };
+    //----------------------------------------------------
+    const options = [];
+    options [0]={
+        "lat":34.889294,
+        "lon":135.807693,
+        "title":"日本",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":620,
+        "description": 'KIRIN一番搾り<br><img class="KIRIN" src="./data/kirin.jpg" width="70"><a href="" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>🛒　カートに入れる</a><div class="youtube"><iframe width="260" height="100%" src="https://www.youtube.com/embed/4ZfcWVnW0TA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
+        "show":false
+    };
+    options[1]={
+        "lat":40.039500,
+        "lon":-100.728500,
+        "title":"USA",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'Budweiser<br><img class="BUDWEISER" src="./data/budweiser.png" width="50"><a href="" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>🛒　カートに入れる</a><div class="youtube"><iframe width="260" height="100%" src="https://www.youtube.com/embed/TPKgC8KPBMg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
+        "show":false
+    };
+    options [2]={
+        "lat":52.039500,
+        "lon":5.807693,
+        "title":"オランダ",
+        "pinColor":"#ff0000",
+        "height":270,
+        "width":620,
+        "description": 'HEINEKEN<br><img class="HEINEKEN" src="./data/heineken.jpg" width="70"><a href="" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>🛒　カートに入れる</a><div class="youtube"><iframe width="260" height="100%" src="https://www.youtube.com/embed/4V3SdBsDq1A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
+        "show":false
+    };
+
+    options [3]={
+        "lat":-3.039500,
+        "lon":101.807693,
+        "title":"インドネシア",
+        "pinColor":"#ff0000",
+        "height":270,
+        "width":620,
+        "description": 'BINTANG<br><img class="BINTANG" src="./data/bintang.jpg" width="50"><a href="" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>🛒　カートに入れる</a></div>',
+        "show":false
+    };
+
+    options [4]={
+        "lat":41.039500,
+        "lon":-2.807693,
+        "title":"スペイン",
+        "pinColor":"#ff0000",
+        "height":270,
+        "width":300,
+        "description": 'ESTRELLA DAMM<br><img class="ESTRELLA" src="./data/estrelladam.jpg" width="80"><a href="" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>🛒　カートに入れる</a></div>',
+        "show":false
+    };
+
+    //----------------------------------------------------
+    //4. Switch infoboxs
+    //   infoboxLayers(options, true); //true=one, false=Multiple
+    //----------------------------------------------------
+    map.infoboxLayers(options,true);
+
+};
+
+
+$(".enter").on( "click" , function (){
+    const h =  "堤見";
+    console.log(h);
+    // $("#content").html(h);
+ });
+
+ $(".KIRINb").on( "click" , function (){
+    const ht =  "堤見2";
+    console.log(ht);
+    // $("#content").html(h);
+ });
+
+</script>
+
+</body>
+</html>
